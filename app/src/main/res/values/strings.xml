@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">لایو اسکریپت</string>
+    <string name="hint_server_url">آدرس سرور</string>
+    <string name="hint_topic">موضوع جلسه</string>
+    <string name="label_force_offline">اجبار حالت آفلاین (تست)</string>
+    <string name="label_agents">ایجنت‌ها</string>
+    <string name="btn_start_recording">شروع ضبط</string>
+    <string name="btn_stop_recording">توقف ضبط</string>
+    <string name="btn_add_text">افزودن متن</string>
+    <string name="label_transcript">رونوشت جلسه</string>
+    <string name="btn_run_agents">اجرای ایجنت‌ها</string>
+    <string name="btn_save_session">ذخیره جلسه</string>
+    <string name="btn_clear_session">پاک کردن جلسه</string>
+    <string name="btn_history">تاریخچه</string>
+    <string name="history_title">جلسات ذخیره‌شده</string>
+    <string name="history_empty">هنوز جلسه‌ای ذخیره نشده</string>
+    <string name="status_loading_models">در حال بارگذاری مدل‌های آفلاین…</string>
+    <string name="status_ready_online">آماده — آنلاین (سرور)</string>
+    <string name="status_ready_offline">آماده — آفلاین (مدل روی گوشی)</string>
+    <string name="status_listening">در حال شنیدن…</string>
+    <string name="status_refining">در حال دقیق‌تر کردن متن با Whisper…</string>
+    <string name="status_models_unavailable">مدل‌های آفلاین نصب نشده — از موتور پیش‌فرض اندروید استفاده می‌شود</string>
+    <string name="confirm_clear_title">پاک کردن جلسه</string>
+    <string name="confirm_clear_message">متن جلسه پاک شود؟ اگر ذخیره نکرده باشید، این متن برای همیشه از بین می‌رود.</string>
+    <string name="dialog_add_text_title">افزودن متن دستی</string>
+    <string name="toast_session_saved">جلسه ذخیره شد</string>
+    <string name="toast_no_transcript">اول یک رونوشت (با ضبط یا افزودن متن) بساز</string>
+    <string name="toast_no_agents">حداقل یک ایجنت انتخاب کن</string>
+    <string name="mic_permission_rationale">برای ضبط صدا و تشخیص گفتار به دسترسی میکروفون نیاز داریم</string>
+</resources>
