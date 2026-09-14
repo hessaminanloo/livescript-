@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-	with:
-    	submodules: recursive
+        with:
+          submodules: recursive
 
       - name: Setup JDK 17
         uses: actions/setup-java@v4
@@ -34,3 +34,4 @@ jobs:
           name: LiveScript-debug
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+
