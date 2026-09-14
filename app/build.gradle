@@ -10,16 +10,16 @@ android {
 
     defaultConfig {
         applicationId = "ai.z.livescript"
-        minSdk = 26           // required by MediaPipe LLM Inference + whisper.cpp NDK build
+        minSdk = 26
         targetSdk = 34
         versionCode = 2
         versionName = "2.0.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
-            abiFilters += listOf("arm64-v8a", "armeabi-v7a")
+            abiFilters "arm64-v8a", "armeabi-v7a"
         }
+
         externalNativeBuild {
             cmake {
                 cppFlags += "-std=c++17 -O3"
@@ -38,8 +38,12 @@ android {
         release {
             isMinifyEnabled = true
             isDebuggable = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
+
         debug {
             isDebuggable = true
             applicationIdSuffix = ".debug"
@@ -50,16 +54,20 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
+
     buildFeatures {
         viewBinding = true
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+
         jniLibs {
             useLegacyPackaging = true
         }
@@ -80,11 +88,11 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
-    // Networking (talks to the existing /api/agents/run-all backend)
+    // Networking
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("org.json:json:20240303")
 
-    // Local persistence (fixes the "save session does nothing" bug)
+    // Local persistence
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
@@ -93,12 +101,13 @@ dependencies {
     implementation("com.alphacephei:vosk-android:0.3.70")
     implementation("net.java.dev.jna:jna:5.14.0@aar")
 
-    // Offline on-device LLM for agents (summary/discussion/actions/etc. without internet)
+    // Offline on-device LLM
     implementation("com.google.mediapipe:tasks-genai:0.10.14")
 
-    // Connectivity monitoring (decide remote vs offline agent runner)
+    // Connectivity monitoring
     implementation("androidx.lifecycle:lifecycle-process:2.8.4")
 
+    // Tests
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
 }
