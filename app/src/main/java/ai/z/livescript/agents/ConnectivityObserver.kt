@@ -1,8 +1,5 @@
 package ai.z.livescript.agents
 
-cat > app/src/main/java/ai/z/livescript/agents/ConnectivityObserver.kt << 'EOF'
-package ai.z.livescript.agents
-
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
