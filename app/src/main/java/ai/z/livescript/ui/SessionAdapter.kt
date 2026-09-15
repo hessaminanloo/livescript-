@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ai.z.livescript.databinding.ItemSessionBinding
 import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 class SessionAdapter(
@@ -28,7 +29,7 @@ class SessionAdapter(
         val item = getItem(position)
         val modeLabel = if (item.wasOffline) "آفلاین" else "آنلاین"
         holder.binding.tvTitle.text = item.title
-        holder.binding.tvMeta.text = "${dateFormat.format(item.createdAt)} · $modeLabel"
+        holder.binding.tvMeta.text = "${dateFormat.format(Date(item.createdAt))} · $modeLabel"
         holder.binding.tvPreview.text = item.transcript
         holder.binding.root.setOnClickListener { onClick(item) }
         holder.binding.root.setOnLongClickListener { onLongClickDelete(item); true }

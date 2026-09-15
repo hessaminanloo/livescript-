@@ -1,5 +1,8 @@
 package ai.z.livescript.agents
 
+cat > app/src/main/java/ai/z/livescript/agents/ConnectivityObserver.kt << 'EOF'
+package ai.z.livescript.agents
+
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
@@ -11,7 +14,7 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SharingStarted
+import kotlinx.coroutines.flow.SharingStarted
 
 class ConnectivityObserver(context: Context) {
 
